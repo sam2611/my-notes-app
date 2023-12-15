@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { login } from '../services/api';
+import { login } from '../services/api.js';
 import { useNavigate } from 'react-router-dom';
 import {ToastContainer, toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
@@ -14,10 +14,11 @@ function Login({user, setUser}) {
     });
 
     useEffect(()=>{
-       if(user){
-        navigation('/')
-       }
-    }, [])
+        const user=localStorage.getItem('user');
+        if(user){
+          return navigation('/')
+        }
+      },[])
 
 
     const [errors, setErrors]= useState(null);
