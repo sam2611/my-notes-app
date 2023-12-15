@@ -1,9 +1,11 @@
 import React from 'react'
+import Header from './partials/Header'
 
 function Home() {
   return (
     <div>
-      home
+       <Header/>
+       home
     </div>
   )
 }

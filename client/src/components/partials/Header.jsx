@@ -1,7 +1,21 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Header() {
+
+  const navigation= useNavigate()
+
+  const [user, setUser] = useState(null)
+
+  useEffect(()=>{
+    const u= localStorage.getItem('user');
+    setUser(u)
+  }, [])
+
+  const handleLogout=()=>{
+    localStorage.clear();
+    navigation('/login')
+  }
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
@@ -17,14 +31,17 @@ function Header() {
             </Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="login">Login</Link>
+          <Link className="nav-link" to="/login">Login</Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/register">Register</Link>
         </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Logout</a>
-        </li>
+        {
+            user && <li className="nav-item">
+            <a className="nav-link" onClick={handleLogout} >Logout</a>
+          </li>
+        }
+        
         
       </ul>
       <form className="d-flex">

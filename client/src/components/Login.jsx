@@ -3,8 +3,9 @@ import { login } from '../services/api.js';
 import { useNavigate } from 'react-router-dom';
 import {ToastContainer, toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
+import Header from './partials/Header.jsx';
 
-function Login({user, setUser}) {
+function Login() {
 
     const  navigation = useNavigate()
 
@@ -54,6 +55,9 @@ function Login({user, setUser}) {
     };
 
   return (
+    <>
+     <Header/>
+    
     <div className="container">
         <ToastContainer/>
         <div className="row justify-content-center mt-4">
@@ -84,6 +88,7 @@ function Login({user, setUser}) {
             </div>
         </div>
     </div>
+    </>
   )
 }
 
