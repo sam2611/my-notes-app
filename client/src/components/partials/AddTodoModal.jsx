@@ -3,7 +3,7 @@ import { useState } from 'react'
 import {ToastContainer, toast} from "react-toastify";
 import { createTodoApi } from '../../services/api';
 
-function AddTodoModal() {
+function AddTodoModal({setRefreshList }) {
     const[todoDesc, setTodoDesc]=useState('')
 
     const handleTodoSubmit=async ()=>{
@@ -14,16 +14,18 @@ function AddTodoModal() {
         }
 
         const result= await createTodoApi({desc: todoDesc});
-
-        if(result.status===200){
+        console.log(result);
+        if(result.status===200 && result.data.status===200){
             toast('TodoAdded');
+            setRefreshList(new Date())
+            setTodoDesc('')
         }else{
             toast(result.data.message)
         }
     }
   return (
     <div className="modal mt-5" id="exampleModal">
-        <ToastContainer/>
+        
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
@@ -45,7 +47,7 @@ function AddTodoModal() {
             </div>
             <div className='modal-footer'>
               <button className='btn btn-secondary' onClick={()=>{setTodoDesc('')}} data-bs-dismiss='modal'>Close</button>
-              <button className='btn btn-secondary' onClick={handleTodoSubmit} >Save Todo</button>
+              <button className='btn btn-secondary' onClick={handleTodoSubmit} data-bs-dismiss='modal'>Save Todo</button>
             </div>
           </div>
         </div>

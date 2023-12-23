@@ -1,20 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from './partials/Header'
 import Todo from './partials/Todo'
 import AddTodoModal from './partials/AddTodoModal'
+import { useNavigate } from 'react-router-dom'
+import { getTodoListApi, getToken } from '../services/api'
+import {ToastContainer, toast} from "react-toastify";
 
 function Home() {
+
+  const[list, setList]=useState([]);
+  const[refreshList, setRefreshList]=useState();
+
+ const navigateion=useNavigate();
+  useEffect(()=>{
+    if(!getToken()){
+navigateion('/login')
+    }
+fetchTodoList()
+  },[refreshList])
+
+  async function fetchTodoList(){
+    const result= await getTodoListApi()
+    console.log('todolist',result);
+    if(result.status===200 && result.data.status===200){
+      setList(result.data.data.todos.reverse())
+    }
+  }
   return (
     <div>
        <Header/>
+       <ToastContainer />
        <div className="container">
         <div className="row justify-content-md-center mt-4">
-          <Todo/>
-          <Todo/>
-          <Todo/>
-          <Todo/>
-          <Todo/>
-          <Todo/>
+          {
+            list.map((todo)=><Todo todo={todo} key={todo._id}/>)
+          }
+         
 
         </div>
        </div>
@@ -23,7 +44,7 @@ function Home() {
           Add
         </button>
        </div>
-       <AddTodoModal/>
+       <AddTodoModal setRefreshList={setRefreshList}/>
     </div>
   )
 }
