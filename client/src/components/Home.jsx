@@ -11,10 +11,10 @@ function Home() {
   const[list, setList]=useState([]);
   const[refreshList, setRefreshList]=useState();
 
- const navigateion=useNavigate();
+ const navigation=useNavigate();
   useEffect(()=>{
     if(!getToken()){
-navigateion('/login')
+navigation('/login')
     }
 fetchTodoList()
   },[refreshList])
@@ -33,7 +33,7 @@ fetchTodoList()
        <div className="container">
         <div className="row justify-content-md-center mt-4">
           {
-            list.map((todo)=><Todo todo={todo} key={todo._id}/>)
+            list.map((todo)=><Todo todo={todo} key={todo._id} setRefreshList={setRefreshList} />)
           }
          
 
