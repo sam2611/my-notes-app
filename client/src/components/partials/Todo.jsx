@@ -1,6 +1,6 @@
 import React from 'react'
 import moment from 'moment';
-import { deleteTodoApi } from '../../services/api';
+import { MarkTodoApi, deleteTodoApi } from '../../services/api';
 import {ToastContainer, toast} from "react-toastify";
 import { unstable_useViewTransitionState } from 'react-router-dom';
 
@@ -17,6 +17,19 @@ export default function Todo({todo, setRefreshList}) {
       toast('Deleted')
     }else{
       toast('Failed to delete, please try again')
+    }
+  }
+
+  const handleMarkTodo = async() => {
+    const result=await MarkTodoApi({
+      todo_id:todo._id
+    })
+
+    if(result.data.status===200){
+      setRefreshList(new Date())
+      toast(result.data.message)
+    }else{
+      toast('Failed to Mark, please try again')
     }
   }
   
@@ -37,7 +50,7 @@ export default function Todo({todo, setRefreshList}) {
                 <button style={{background: 'red'}} onClick={handleDelete}>Delete</button>
               </div>
               <div className="markTodo">
-                <button style={{background: 'lightgreen'}}> {todo.isCompleted ? 'Mark InCompleted' : 'Mark Complete'} </button>
+                <button onClick={handleMarkTodo} style={{background: 'lightgreen'}}> {todo.isCompleted ? 'Mark InCompleted' : 'Mark Complete'} </button>
               </div>
             </div>
       

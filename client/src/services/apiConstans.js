@@ -10,3 +10,5 @@ export const TODO_LIST =`${API_URL}/api/todolist`
 
 export const DELETE_TODO =`${API_URL}/api/deleteTodo`
 
+export const MARK_TODO =`${API_URL}/api/marktodo`
+
