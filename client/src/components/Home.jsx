@@ -46,7 +46,13 @@ fetchTodoList()
           {
             filterlist.map((todo)=><Todo todo={todo} key={todo._id} setRefreshList={setRefreshList} />)
           }
-         
+          
+          {
+            filterlist.length===0 && <div className="notFoundTodos">
+              No todos Found ! 
+            </div>
+          }
+
 
         </div>
        </div>

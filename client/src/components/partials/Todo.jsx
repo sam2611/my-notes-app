@@ -40,17 +40,17 @@ export default function Todo({todo, setRefreshList}) {
             {todo.isCompleted ? 'Completed': 'Not Completed'}
         </div>
         <div className='card-body'>
-            <h4 className='card-title'>{todo.desc}</h4>
+            <h4 className='card-title' style={{textDecoration: !todo.isCompleted? 'line-through': 'none'}}>{todo.desc}</h4>
             <p className='card-text'>{moment(todo.date).fromNow()}</p>
-
+ 
         </div>
 
         <div className="actionButtons" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
               <div className="deleteButtons">
-                <button style={{background: 'red'}} onClick={handleDelete}>Delete</button>
+                <button style={{background: 'red', borderRadius: '8px'}} onClick={handleDelete}>Delete</button>
               </div>
               <div className="markTodo">
-                <button onClick={handleMarkTodo} style={{background: 'lightgreen'}}> {todo.isCompleted ? 'Mark InCompleted' : 'Mark Complete'} </button>
+                <button onClick={handleMarkTodo} style={{background: 'lightgreen', borderRadius: '8px'}}> {todo.isCompleted ? 'Mark InCompleted' : 'Mark Complete'} </button>
               </div>
             </div>
       
