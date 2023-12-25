@@ -47,7 +47,7 @@ The status change is reflected in the database.
 
 Todos can be sorted or filtered based on the time they were created.
 Common options include sorting by the most recently created or the oldest todos.
-<img src=""/>
+<img src="https://github.com/sam2611/my-notes-app/blob/main/Screenshot%202023-12-25%20121213.png"/>
   </li>
 
 
