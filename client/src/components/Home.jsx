@@ -10,6 +10,7 @@ function Home() {
 
   const[list, setList]=useState([]);
   const[refreshList, setRefreshList]=useState();
+  const [filterlist, setFilteredList]=useState([]);
   const [searchText, setSearchText]=useState("");
 
  const navigation=useNavigate();
@@ -19,6 +20,15 @@ navigation('/login')
     }
 fetchTodoList()
   },[refreshList])
+
+  useEffect(()=> {
+    if(searchText===''){
+      setFilteredList(list)
+    }else{
+      const filterlist=list.filter(todo=> todo.desc.toLowerCase().includes(searchText.toLowerCase().trim()))
+      setFilteredList(filterlist)
+    }
+  },[list,searchText])
 
   async function fetchTodoList(){
     const result= await getTodoListApi()
@@ -34,7 +44,7 @@ fetchTodoList()
        <div className="container">
         <div className="row justify-content-md-center mt-4">
           {
-            list.map((todo)=><Todo todo={todo} key={todo._id} setRefreshList={setRefreshList} />)
+            filterlist.map((todo)=><Todo todo={todo} key={todo._id} setRefreshList={setRefreshList} />)
           }
          
 
