@@ -28,7 +28,7 @@ The created todos are stored in a MongoDB database.
 
 Users can delete todos they no longer need.
 This action removes the corresponding todo entry from the database.
-<img src=""/>
+<img src="https://github.com/sam2611/my-notes-app/blob/main/Screenshot%202023-12-25%20121254.png"/>
   </li>
 
 
