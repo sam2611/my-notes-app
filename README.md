@@ -57,7 +57,7 @@ Common options include sorting by the most recently created or the oldest todos.
 Users can search for specific todos using a search bar or similar input method.
 The search functionality may look for matches in titles, descriptions, or other relevant fields.
 This feature helps users quickly locate specific todos within a potentially large set of entries.
-<img src=""/>
+<img src="https://github.com/sam2611/my-notes-app/blob/main/Screenshot%202023-12-25%20121234.png"/>
   </li>
 
 
