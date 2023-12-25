@@ -8,8 +8,8 @@ my-notes-app
 Users can create accounts by providing necessary information such as username, email, and password.
 Authentication ensures that only registered users can access certain parts of the application.
 Users can log in using their credentials.
-<img src=""/>
-<img src=""/>
+<img src="https://github.com/sam2611/my-notes-app/blob/main/Screenshot%202023-12-25%20121334.png"/>
+<img src="https://github.com/sam2611/my-notes-app/blob/main/Screenshot%202023-12-25%20121315.png"/>
   </li>
 
 
