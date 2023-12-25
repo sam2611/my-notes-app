@@ -37,7 +37,7 @@ export default function Todo({todo, setRefreshList}) {
   return (
     <div className='col-sm-3 mx-3 my-2 alert bg-light'>
         <div className="card-header">
-            {todo.isCompleted ? 'Completed': 'Not Completed'}
+            {todo.isCompleted ? 'Not Completed': 'Completed'}
         </div>
         <div className='card-body'>
             <h4 className='card-title' style={{textDecoration: !todo.isCompleted? 'line-through': 'none'}}>{todo.desc}</h4>
@@ -50,7 +50,7 @@ export default function Todo({todo, setRefreshList}) {
                 <button style={{background: 'red', borderRadius: '8px'}} onClick={handleDelete}>Delete</button>
               </div>
               <div className="markTodo">
-                <button onClick={handleMarkTodo} style={{background: 'lightgreen', borderRadius: '8px'}}> {todo.isCompleted ? 'Mark InCompleted' : 'Mark Complete'} </button>
+                <button onClick={handleMarkTodo} style={{background: 'lightgreen', borderRadius: '8px'}}> {todo.isCompleted ? 'Mark Completed' : 'Mark Incomplete'} </button>
               </div>
             </div>
       
