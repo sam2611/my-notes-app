@@ -38,7 +38,7 @@ This action removes the corresponding todo entry from the database.
 Each todo has a status indicating whether it's completed or not.
 Users can toggle the completion status of a todo, marking it as complete or incomplete.
 The status change is reflected in the database.
-<img src=""/>
+<img src="https://github.com/sam2611/my-notes-app/blob/main/Screenshot%202023-12-25%20121213.png"/>
 
   </li>
 
