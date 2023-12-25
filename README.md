@@ -19,7 +19,7 @@ Users can log in using their credentials.
 Authenticated users can create new todos/note entries.
 A form or interface allows users to input a title, description, and potentially other details for the todo.
 The created todos are stored in a MongoDB database.
-<img src=""/>
+<img src="https://github.com/sam2611/my-notes-app/blob/main/Screenshot%202023-12-25%20122704.png"/>
   </li>
 
 
