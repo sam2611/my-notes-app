@@ -10,6 +10,7 @@ function Home() {
 
   const[list, setList]=useState([]);
   const[refreshList, setRefreshList]=useState();
+  const [searchText, setSearchText]=useState("");
 
  const navigation=useNavigate();
   useEffect(()=>{
@@ -28,7 +29,7 @@ fetchTodoList()
   }
   return (
     <div>
-       <Header/>
+       <Header searchText={searchText} setSearchText={setSearchText}/>
        <ToastContainer />
        <div className="container">
         <div className="row justify-content-md-center mt-4">
