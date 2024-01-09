@@ -1,5 +1,3 @@
-my-notes-app <a href="https://gorgeous-squirrel-7ba95c.netlify.app/">here</a>
-
 <b> A MERN (MongoDB, Express.js, React, Node.js) app for note-taking typically involves several key features. Below is a description of the features you mentioned:</b>
 <ul>
   <li>
@@ -64,4 +62,6 @@ This feature helps users quickly locate specific todos within a potentially larg
 </ul>
 Overall, the MERN stack is used to build the application, with Node.js and Express.js handling the backend, MongoDB for data storage, and React for the frontend. User authentication is essential for securing user-specific data, and CRUD (Create, Read, Update, Delete) operations are implemented for managing todos. The frontend communicates with the backend through API endpoints, and the data is stored and retrieved from the MongoDB database. The application provides a user-friendly interface for managing and organizing todos efficiently.
 
+
+my-notes-app <a href="https://gorgeous-squirrel-7ba95c.netlify.app/">here</a>
 
