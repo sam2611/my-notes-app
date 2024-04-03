@@ -13,8 +13,9 @@ function AddTodoModal({setRefreshList }) {
         return
         }
 
-        const result= await createTodoApi({desc: todoDesc});
+        const result= await createTodoApi({desc: todoDesc}); // api call for creating todo
         console.log(result);
+        
         if(result.status===200 && result.data.status===200){
             toast('TodoAdded');
             setRefreshList(new Date())

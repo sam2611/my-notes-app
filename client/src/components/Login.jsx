@@ -33,20 +33,20 @@ function Login() {
         console.log('form', result);
         setErrors(null);
 
-        if(result.status==200){
-            if(result.data.status==200)
+        if(result.status===200){
+            if(result.data.status===200)
             {
                 localStorage.setItem('user',JSON.stringify(result.data.data))
                 navigation("/");
                 return;
             }
-            if(result.data.status==201)
+            if(result.data.status===201)
             {
                 setErrors(result.data.data)
                 return;
             }
 
-            if(result.data.status==202)
+            if(result.data.status===202)
             {
                 toast(result.data.message);
                 return;
