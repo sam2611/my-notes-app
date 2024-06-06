@@ -3,12 +3,10 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/app.js -e js",
-    "start": "node src/app.js",
-    "postinstall": "npm rebuild bcrypt"
+    "dev": "nodemon src/app.js -e js"
   },
   "author": "",
   "license": "ISC",
@@ -20,8 +18,5 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.0.2",
     "nodemon": "^3.0.1"
-  },
-  "engines": {
-    "node": "16.x"
   }
 }
