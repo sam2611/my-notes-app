@@ -10,7 +10,7 @@ const app=express();
 mongoose.connect(DB_CONNECT)
     .then(() => {
         console.log('Connected to MongoDB');
-        const PORT = 8000;
+        const PORT = process.env.PORT || 8000;
 
         app.use(cors());
         app.use(express.json());
