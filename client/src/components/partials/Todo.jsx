@@ -1,8 +1,7 @@
 import React from 'react'
 import moment from 'moment';
 import { MarkTodoApi, deleteTodoApi } from '../../services/api';
-import {ToastContainer, toast} from "react-toastify";
-import { unstable_useViewTransitionState } from 'react-router-dom';
+import {toast} from "react-toastify";
 
 
 export default function Todo({todo, setRefreshList}) {
@@ -11,7 +10,6 @@ export default function Todo({todo, setRefreshList}) {
     const result=await deleteTodoApi({
       todo_id:todo._id
     })
-
     if(result.data.status===200){
       setRefreshList(new Date())
       toast('Deleted')
@@ -24,7 +22,6 @@ export default function Todo({todo, setRefreshList}) {
     const result=await MarkTodoApi({
       todo_id:todo._id
     })
-
     if(result.data.status===200){
       setRefreshList(new Date())
       toast(result.data.message)

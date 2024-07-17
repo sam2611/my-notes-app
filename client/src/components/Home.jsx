@@ -13,6 +13,7 @@ function Home() {
   const [filterlist, setFilteredList]=useState([]);
   const [searchText, setSearchText]=useState("");
 
+  
  const navigation=useNavigate();
   useEffect(()=>{
     if(!getToken()){
@@ -32,9 +33,10 @@ fetchTodoList()
 
   async function fetchTodoList(){
     const result= await getTodoListApi()
-    console.log('todolist',result);
+    // console.log('todolist',result);
     if(result.status===200 && result.data.status===200){
       setList(result.data.data.todos.reverse())
+      setFilteredList(result.data.data.todos.reverse())
     }
   }
   return (

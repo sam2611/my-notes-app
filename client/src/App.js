@@ -1,5 +1,5 @@
 
-import Header from './components/partials/Header';
+import Header from './components/partials/Header.jsx';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Home from "./components/Home.jsx"
 import Register from "./components/Register.jsx"

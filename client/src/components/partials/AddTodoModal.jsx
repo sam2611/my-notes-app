@@ -7,14 +7,14 @@ function AddTodoModal({setRefreshList }) {
     const[todoDesc, setTodoDesc]=useState('')
 
     const handleTodoSubmit=async ()=>{
-        console.log(todoDesc, 'todoDesc')
+        // console.log(todoDesc, 'todoDesc')
         if(todoDesc===''){
         toast('Todo is required')
         return
         }
 
         const result= await createTodoApi({desc: todoDesc}); // api call for creating todo
-        console.log(result);
+        // console.log(result);
         
         if(result.status===200 && result.data.status===200){
             toast('TodoAdded');
@@ -40,6 +40,7 @@ function AddTodoModal({setRefreshList }) {
               <div className="form-group">
                 <textarea className="form-control"
                 row={3}
+                value={todoDesc}
                 onChange={(e)=>{setTodoDesc(e.target.value)}}
                 placeholder='Write todos...'>
 
