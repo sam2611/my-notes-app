@@ -4,7 +4,7 @@ import { RegisterSchema } from "../ValidationSchema/RegisterSchema.js";
 import { LoginSchema } from "../ValidationSchema/LoginSchema.js";
 import Login from "../controllers/Login.controller.js";
 import { createTodo } from "../controllers/Todo.controller.js";
-import { check } from "express-validator";
+import { check } from 'express-validator';
 import { GetTodos } from "../controllers/TodoList.controller.js";
 import { MarkTodo } from "../controllers/MarkTodo.controller.js";
 import { RemoveTodo } from "../controllers/RemoveTodo.controller.js";
